@@ -20,7 +20,6 @@
     </dependency>
   </dependencies>
 
-  <!-- ✅ Add this block -->
   <distributionManagement>
     <repository>
       <id>example-repo-local</id>
@@ -30,6 +29,7 @@
 
   <build>
     <plugins>
+      <!-- Maven Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -39,6 +39,8 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+
+      <!-- Jacoco Code Coverage Plugin -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -58,7 +60,13 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- ✅ Maven WAR Plugin updated to be compatible with Java 17 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+      </plugin>
     </plugins>
   </build>
-
 </project>
