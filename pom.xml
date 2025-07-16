@@ -22,8 +22,8 @@
 
   <distributionManagement>
     <repository>
-      <id>example-repo-local</id>
-      <url>http://localhost:8082/artifactory/example-repo-local</url>
+      <id>sample-project-jrepo</id>
+      <url>http://172.29.84.240:8082/artifactory/sample-project-jrepo</url>
     </repository>
   </distributionManagement>
 
