@@ -22,8 +22,8 @@
 
   <distributionManagement>
     <repository>
-      <id>sample-project-jrepo</id>
-      <url>http://172.29.84.240:8082/artifactory/sample-project-jrepo</url>
+      <id>libs-release-local</id>
+      <url>http://172.29.84.240:8082/artifactory/libs-release-local</url>
     </repository>
   </distributionManagement>
 
