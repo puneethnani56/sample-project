@@ -1,17 +1,26 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
 
+  <modelVersion>4.0.0</modelVersion>
   <groupId>com.ilp</groupId>
   <artifactId>ILP_Store</artifactId>
   <version>1.0</version>
   <packaging>war</packaging>
-
   <name>ILP_Store</name>
 
+  <!-- ✅ Dependencies -->
   <dependencies>
+    <!-- Servlet API (provided by Tomcat) -->
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>5.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- JUnit for Unit Testing -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -20,6 +29,7 @@
     </dependency>
   </dependencies>
 
+  <!-- ✅ Optional Artifactory Deployment -->
   <distributionManagement>
     <repository>
       <id>libs-release-local</id>
@@ -31,9 +41,12 @@
     </snapshotRepository>
   </distributionManagement>
 
+  <!-- ✅ Build Plugins -->
   <build>
+    <finalName>ILP_Store</finalName>
+
     <plugins>
-      <!-- Maven Compiler Plugin -->
+      <!-- Java Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -44,7 +57,17 @@
         </configuration>
       </plugin>
 
-      <!-- Jacoco Code Coverage Plugin -->
+      <!-- WAR Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+
+      <!-- ✅ JaCoCo Code Coverage Plugin -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -64,13 +87,16 @@
           </execution>
         </executions>
       </plugin>
-
-      <!-- ✅ Maven WAR Plugin updated to be compatible with Java 17 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.2</version>
-      </plugin>
     </plugins>
   </build>
+
+  <!-- ✅ Sonar Properties (used by scanner CLI or Jenkins) -->
+  <properties>
+    <sonar.projectKey>ILP_Store</sonar.projectKey>
+    <sonar.projectName>ILP_Store</sonar.projectName>
+    <sonar.java.binaries>target/classes</sonar.java.binaries>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
 </project>
