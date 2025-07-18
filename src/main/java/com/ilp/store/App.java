@@ -1,11 +1,22 @@
 package com.ilp.store;
 
-public class App {
-    public static void main(String[] args) {
-        System.out.println("Welcome to ILP Store E-Commerce App!");
+public class Product {
+    private String id;
+    private String name;
+    private double price;
+
+    public Product(String id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
     }
 
-    public String getWelcomeMessage() {
-        return "Welcome to ILP Store";
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public double getPrice() { return price; }
+
+    @Override
+    public String toString() {
+        return id + " - " + name + " - ₹" + price;
     }
 }
