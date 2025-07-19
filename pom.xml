@@ -1,9 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.ilp</groupId>
   <artifactId>ILP_Store</artifactId>
   <version>1.0</version>
@@ -12,15 +13,15 @@
 
   <!-- ✅ Dependencies -->
   <dependencies>
-    <!-- Servlet API (provided by Tomcat) -->
+    <!-- ✅ Java EE Servlet API for Tomcat 9 -->
     <dependency>
-      <groupId>jakarta.servlet</groupId>
-      <artifactId>jakarta.servlet-api</artifactId>
-      <version>5.0.0</version>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
 
-    <!-- JUnit for Unit Testing -->
+    <!-- ✅ JUnit for Unit Testing -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -44,9 +45,9 @@
   <!-- ✅ Build Plugins -->
   <build>
     <finalName>ILP_Store</finalName>
-
     <plugins>
-      <!-- Java Compiler Plugin -->
+
+      <!-- ✅ Maven Compiler Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -57,7 +58,7 @@
         </configuration>
       </plugin>
 
-      <!-- WAR Plugin -->
+      <!-- ✅ WAR Plugin -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
@@ -67,7 +68,7 @@
         </configuration>
       </plugin>
 
-      <!-- ✅ JaCoCo Code Coverage Plugin -->
+      <!-- ✅ JaCoCo Plugin for Code Coverage -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
@@ -90,7 +91,7 @@
     </plugins>
   </build>
 
-  <!-- ✅ Sonar Properties (used by scanner CLI or Jenkins) -->
+  <!-- ✅ Sonar Scanner Properties -->
   <properties>
     <sonar.projectKey>ILP_Store</sonar.projectKey>
     <sonar.projectName>ILP_Store</sonar.projectName>
@@ -100,3 +101,4 @@
   </properties>
 
 </project>
+
